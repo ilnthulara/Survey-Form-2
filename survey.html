@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="script.js"></script>
+    <title>Survey</title>
+</head>
+
+<body class="body">
+    <figure class="survey-form">
+        <hr>
+        <h1 class="form-heading">Climate Change Awareness Survey</h1>
+        <hr>
+        <p>Please take a few minutes to fill out this survey questions</p>
+        <form id="form" name="myForm" onsubmit="confirmation()" method="post">
+            <div class="form-group">
+                <label for="name">Full Name (no more than 50 letters)</label>
+                <input type="text" id="name" name="fullname" maxlength="50" placeholder="Enter your name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email (multiple emails acceptable, use "," to separate)</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" multiple required />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone number (format: 1234-567-890)</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
+                    placeholder="Enter your phone number" required />
+            </div>
+
+            <div class="form-group">
+                <label>Gender<span> *</span> :</label><br>
+                <label for="male"><input type="radio" id="male" value="Male" name="gender">Male</input></label>
+                <label for="female"><input type="radio" id="female" value="Female" name="gender">Female</input></label>
+                <label for="not"><input type="radio" id="not" value="Prefer not to say" name="gender">Prefer not to
+                    say</input></label>
+            </div>
+
+            <div class="form-group">
+                <label>Age<span> *</span> :</label><br>
+                <label for="age_1"><input type="radio" name="age" value="16 - 24">16 - 24</input></label>
+                <label for="age_2"><input type="radio" name="age" value="25 - 34">25 - 34</input></label>
+                <label for="age_3"><input type="radio" name="age" value="35 - 44">35 - 44</input></label>
+                <label for="age_4"><input type="radio" name="age" value="45 - 54">45 - 54</input></label>
+                <label for="age_5"><input type="radio" name="age" value="55 - 64">55 - 64</input></label>
+                <label for="age_6"><input type="radio" name="age" value="65 - 74">65 - 74</input></label>
+                <label for="age_7"><input type="radio" name="age" value="75 or over">75 or over</input></label>
+                <label for="age_8"><input type="radio" name="age" value="Prefer not to say">Prefer not to say</input></label>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State<span> *</span> :</label>
+                <select name="state" id="state">
+                    <option value="NSW">New South Wales</option>
+                    <option value="Victoria">Victoria</option>
+                    <option value="Queensland">Queensland</option>
+                    <option value="SA">South Australia</option>
+                    <option value="WA">Western Australia</option>
+                    <option value="Tasmania">Tasmania</option>
+                    <option value="NT">Northern Territory</option>
+                    <option value="ACT">Australian Capital Territory</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Do you feel the pattern of weather is generally changing?<span>*</span></label><br>
+                <label for="weather_1"><input type="radio" name="weather" value="Yes">Yes</label>
+                <label for="weather_2"><input type="radio" name="weather" value="No">No</label>
+                <label for="weather_3"><input type="radio" name="weather" value="Don't know">Don't know</label>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">If yes, why do you think this might be?</label><br>
+                <textarea id="reason" name="reason"></textarea><br>
+            </div>
+
+            <div class="form-group">
+                <label>Have you heard of “climate change”?<span> *</span></label><br>
+                <label for="climate_1"><input type="radio" name="climate" value="Yes">Yes</label>
+                <label for="climate_2"><input type="radio" name="climate" value="No">No</label>
+            </div>
+
+            <div class="form-group">
+                <label>Where have you heard about climate change? <i>Tick as many as you feel apply</i><span>
+                        *</span></label><br>
+                <label for="source_1"><input type="checkbox" name="source" value="Television">Television</label><br>
+                <label for="source_2"><input type="checkbox" name="source" value="Radio">Radio</label><br>
+                <label for="source_3"><input type="checkbox" name="source" value="Newspaper">Newspaper</label><br>
+                <label for="source_4"><input type="checkbox" name="source" value="Internet">Internet</label><br>
+                <label for="source_5"><input type="checkbox" name="source" value="Specialist publications/academic journals">Specialist publications/academic
+                    journals</label><br>
+                <label for="source_6"><input type="checkbox" name="source" value="Environmental groups">Environmental
+                    groups (e.g. Worldwide
+                    Fund for Nature)</label><br>
+                <label for="source_7"><input type="checkbox" name="source" value="School/College/University">School/College/University</label><br>
+                <label for="source_8"><input type="checkbox" name="source" value="Government Agencies">Government
+                    Agencies/Information</label><br>
+                <label for="source_9"><input type="checkbox" name="source" value="Public Libraries">Public
+                    Libraries</label><br>
+                <label for="source_10"><input type="checkbox" name="source" value="Friends/Family">Friends/Family</label><br>
+                <label for="source_11"><input type="checkbox" name="source" value="Local Council">Local
+                    Council</label><br>
+                <label for="source_12"><input type="checkbox" name="source" value="Energy Suppliers">Energy
+                    Suppliers</label><br>
+                <label for="source_13"><input type="checkbox" name="source" value="Other">Other</label><br>
+            </div>
+
+            <div class="form-group">
+                <label>How important is the issue of climate change to you personally?<span>
+                        *</span></label><br>
+                <label for="importance_1"><input type="radio" name="importance" value="Very Important">Very Important</label><br>
+                <label for="importance_2"><input type="radio" name="importance" value="Quite Important">Quite Important</label><br>
+                <label for="importance_3"><input type="radio" name="importance" value="Not Very Important">Not Very Important</label><br>
+                <label for="importance_4"><input type="radio" name="importance" value="Not At All">Not At All</label><br>
+            </div>
+
+            <div class="form-group">
+                <label>What do you think causes climate change? <i>Tick as many as you feel apply</i><span>
+                        *</span></label><br>
+                <label for="cause_1"><input type="checkbox" name="cause" value="Generating power">Generating power</label><br>
+                <label for="cause_2"><input type="checkbox" name="cause" value="Manufacturing goods">Manufacturing goods</label><br>
+                <label for="cause_3"><input type="checkbox" name="cause" value="Cutting down forests">Cutting down forests</label><br>
+                <label for="cause_4"><input type="checkbox" name="cause" value="Using transportation">Using transportation</label><br>
+                <label for="cause_5"><input type="checkbox" name="cause" value="Producing food">Producing food</label><br>
+                <label for="cause_6"><input type="checkbox" name="cause" value="Powering buildings">Powering buildings</label><br>
+                <label for="cause_7"><input type="checkbox" name="cause" value="Consuming too much">Consuming too much</label><br>
+                <label for="cause_8"><input type="checkbox" name="cause" value="Other">Other</label><br>
+            </div>
+
+            <div class="form-group">
+                <label>Do you think climate change is something that is affecting or is going to affect
+                    you, personally?<span> *</span></label><br>
+                <label for="personal_1"><input type="radio" name="personal" value="Yes">Yes</label>
+                <label for="personal_2"><input type="radio" name="personal" value="No">No</label>
+                <label for="personal_3"><input type="radio" name="personal" value="Don't know">Don't know</label>
+            </div>
+
+            <div class="form-group">
+                <label>Who do you think should have the main responsibility for tackling climate change? <i>Please tick
+                        one box only</i><span> *</span></label><br>
+                <input type="checkbox" name="change" value="International organisations (e.g. the UN)">International organisations (e.g. the UN)<br>
+                <input type="checkbox" name="change" value="The national government">The national government<br>
+                <input type="checkbox" name="change" value="Local government">Local government<br>
+                <input type="checkbox" name="change" value="Business and industry">Business and industry<br>
+                <input type="checkbox" name="change" value="Environmental organisations/ lobby groups (e.g. Worldwide Fund for
+                Nature)">Environmental organisations/ lobby groups (e.g. Worldwide Fund for
+                Nature)<br>
+                <input type="checkbox" name="change" value="Individuals">Individuals<br>
+                <input type="checkbox" name="change" value="Other">Other
+            </div>
+
+            <div class="form-group">
+                <label>Do you think anything can be done to tackle climate change?<span>
+                        *</span></label><br>
+                <input type="radio" name="tackle" value="Yes">Yes<br>
+                <input type="radio" name="tackle" value="No">No<br>
+                <input type="radio" name="tackle" value="Don't_know">Don't know<br>
+            </div>
+
+            <div class="form-group">
+                <label>If yes, what do you think can be done to tackle climate change?</label><br>
+                <textarea id="reason1"></textarea><br>
+            </div>
+            <button class="btn-submit">Submit</button>
+        </form>
+    </figure>
+</body>
+
+</html>
